@@ -1,0 +1,1 @@
+console.log("Is my service worker working?");
