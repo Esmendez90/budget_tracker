@@ -58,14 +58,13 @@
     <script src="index.js"></script>
     <script>
       if ("serviceWorker" in navigator) {
-        // Register a service worker hosted at the root of the
-        // site using the default scope.
-        navigator.serviceWorker
-          .register("service-worker.js")
-          .then(() => console.log("Service worker registered!"));
-      } else {
-        console.log("Service workers are not supported.");
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then(reg => {
+            console.log("Service worker registered", reg);
+          });
+        });
       }
+
     </script>
   </body>
 </html>
